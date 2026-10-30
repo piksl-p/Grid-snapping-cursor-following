@@ -1,4 +1,4 @@
-let follower = document.querySelector(".squareTrail");
+let follower = document.querySelector(".selectedSquare");
 let wrapper = document.querySelector(".wrapper");
 
 const followerWidth = 23;
@@ -48,6 +48,7 @@ function animateClick(e) {
     if (isToggled == true) {
     follower.classList.add('active');
     follower.style.transform = `translate3d(${followerX}px, ${followerY-5}px, 0)`;
+
     savedX = followerX;
     savedY = followerY;
   } else {
@@ -65,7 +66,7 @@ function updateBoxShadow(x, y, followerY, followerX) {
   let shadowX = Math.cbrt(xD);
   let shadowY = Math.cbrt(yD);
 
-  console.log(shadowX, shadowY, xD, yD);
+  // console.log(shadowX, shadowY, xD, yD);
   
   follower.style.setProperty(
     'box-shadow', 
