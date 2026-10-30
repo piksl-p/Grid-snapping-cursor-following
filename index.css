@@ -2,6 +2,7 @@ body {
   margin: 20px;
   font-family: system-ui;
   user-select: none;
+  overflow: hidden; 
 }
 
 span {
@@ -10,10 +11,15 @@ span {
   background-color: lightgray;
 }
 
-.wrapper {
+.selectedSquare, .wrapper {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0px;
+  transform: translateX(-200px);
+  pointer-events: none;
+}
+
+.wrapper {
   display: flex; 
   flex-wrap: wrap;
   width: 69px;
@@ -23,7 +29,6 @@ span {
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   backdrop-filter: blur(1px);
-  pointer-events: none;
   mask-position: 0,0;
 }
 
@@ -37,7 +42,7 @@ span {
 
 .active {
   background-color: rgba(255,255,255,.75);
-  transition-duration: 0.5s;
+  transition-duration: 0.5s !important;
   border: 2px solid black !important;
   box-shadow: 
     0px 5px 0px 0px rgba(0,0,0,0.75),
@@ -45,13 +50,8 @@ span {
   ;
 }
 
-.squareTrail {
+.selectedSquare {
   height: 19px;
   width: 19px; 
-  border: 2px solid rgb(70, 70, 70); 
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateX(200px) translateY(60px);
-  pointer-events: none;
+  border: 2px solid rgb(70, 70, 70);  
 }
